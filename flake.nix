@@ -9,6 +9,7 @@
 
   outputs = { self, nixpkgs, flake-utils, poetry2nix }:
     {
+      opkgs = import nixpkgs {};
       # Nixpkgs overlay providing the application
       overlay = nixpkgs.lib.composeManyExtensions [
         poetry2nix.overlay
@@ -16,7 +17,7 @@
           # The application
           myapp = prev.poetry2nix.mkPoetryApplication {
             projectDir = ./.;
-            src = nixpkgs.lib.fetchFromGithub {
+            src = prev.fetchFromGitHub {
               owner = "verata-veritatis";
               repo = "pybit";
               rev = "ef8a6da6e18f7ea05c2c537a92861e70e6bc7fee";

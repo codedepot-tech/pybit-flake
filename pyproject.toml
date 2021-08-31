@@ -6,6 +6,9 @@ authors = ["Peter Alexander <makeroftools@creativedevelopment.systems>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+requests = "^2.26.0"
+websocket-client = "^1.2.1"
+websockets = "^9.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
