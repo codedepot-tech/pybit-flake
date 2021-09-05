@@ -1,7 +1,7 @@
 {
-  description = "Application packaged using poetry2nix";
+  description = "Offline call graph generator for Python 3";
 
-  nixConfig.bash-prompt = "pybit~~$ ";
+  nixConfig.bash-prompt = "pyan~~$ ";
 
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs";
@@ -15,13 +15,13 @@
         poetry2nix.overlay
         (final: prev: {
           # The application
-          myapp = prev.poetry2nix.mkPoetryApplication {
+          pyan = prev.poetry2nix.mkPoetryApplication {
             projectDir = ./.;
             src = prev.fetchFromGitHub {
-              owner = "verata-veritatis";
-              repo = "pybit";
-              rev = "ef8a6da6e18f7ea05c2c537a92861e70e6bc7fee";
-              sha256 = "0pl9zyvn2n5p7q9c9zgb97x0795hc0lg2nmhjbggnqyplxyy7bp0";
+              owner = "codedepot-tech";
+              repo = "pyan";
+              rev = "367487d604113767f1273f8c138085e94572eb3b";
+              sha256 = "0zxnxvill6i3dm5nmwdndnv8s1rnjw2pbf9r211hnqbdjp13ihih";
             };              
           };
         })
@@ -35,14 +35,14 @@
       in
       rec {
         apps = {
-          myapp = pkgs.myapp;
+          pyan = pkgs.pyan;
         };
 
-        defaultApp = apps.myapp;
+        defaultApp = apps.pyan;
 
         devShell = pkgs.mkShell {
           buildInputs = [
-            pkgs.myapp
+            pkgs.pyan
           ];
         };
       }
