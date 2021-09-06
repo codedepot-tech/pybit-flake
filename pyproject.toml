@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pybit"
+name = "pyan"
 version = "0.1.0"
 description = ""
 authors = ["Peter Alexander <makeroftools@creativedevelopment.systems>"]

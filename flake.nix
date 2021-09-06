@@ -17,11 +17,12 @@
           # The application
           pyan = prev.poetry2nix.mkPoetryApplication {
             projectDir = ./.;
-            src = prev.fetchFromGitHub {
-              owner = "codedepot-tech";
-              repo = "pyan";
-              rev = "367487d604113767f1273f8c138085e94572eb3b";
-              sha256 = "0zxnxvill6i3dm5nmwdndnv8s1rnjw2pbf9r211hnqbdjp13ihih";
+            src = prev.fetchgit {
+              # owner = "codedepot-tech";
+              # repo = "pyan";
+              url = "https://github.com/codedepot-tech/pyan.git";
+              rev = "350ea49687b93d5b31afa0778ccf732b6151f874";
+              sha256 = "0qwh5ywfs2x1b8brxzbka1h2hvvr8y58zhdxrxk8fm5xkchvxj6k";
             };              
           };
         })
